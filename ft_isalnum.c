@@ -6,6 +6,13 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:43:14 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/22 14:02:47 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:25:30 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}

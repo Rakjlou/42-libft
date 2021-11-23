@@ -6,6 +6,21 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:43:14 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/22 14:03:43 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:09:47 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
+}

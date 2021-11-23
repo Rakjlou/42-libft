@@ -6,6 +6,18 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:43:14 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/22 14:03:53 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:41:47 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	size;
+
+	size = 0;
+	while (*s++)
+		size++;
+	return (size);
+}

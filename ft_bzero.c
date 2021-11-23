@@ -6,6 +6,13 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:43:14 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/22 14:00:25 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:55:40 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, '\0', n);
+}
