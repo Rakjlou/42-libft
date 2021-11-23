@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/11/23 19:02:31 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/11/23 20:17:53 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,11 @@ SRC = ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c \
-	ft_lstnew.c \
+	ft_putnbr_fd.c
+
+OBJ = $(SRC:.c=.o)
+
+SRC_BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -54,9 +57,9 @@ SRC = ft_isalpha.c \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c \
+	ft_lstmap.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 CC = gcc
 
@@ -64,13 +67,19 @@ CFLAGS = -Wall -Wextra -Werror -pedantic
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) -I . -c $(SRC)
+%.o:%.c
+	$(CC) $(CFLAGS) -I . -c $< -o $@
+
+$(NAME): $(OBJ)
 	ar rc  $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+bonus: $(OBJ) $(OBJ_BONUS)
+	ar rc  $(NAME) $(OBJ) $(OBJ_BONUS)
+	ranlib $(NAME)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
