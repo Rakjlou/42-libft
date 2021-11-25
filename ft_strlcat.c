@@ -6,11 +6,24 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:43:14 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/23 16:05:16 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/11/25 02:17:19 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_strnlen(const char *str, size_t limit)
+{
+	size_t	i;
+
+	i = 0;
+	while (*str && i < limit)
+	{
+		str++;
+		i++;
+	}
+	return (i);
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -20,7 +33,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	size_dst;
 
 	size_src = ft_strlen(src);
-	size_dst = ft_strlen(dst);
+	size_dst = ft_strnlen(dst, size);
 	i = 0;
 	j = 0;
 	if (size == 0)
