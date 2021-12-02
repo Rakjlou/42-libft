@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/12/02 01:48:29 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/02 02:20:53 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_ltoa_base.c \
 	ft_fill_str.c
 
-PRINTF_DIR = ft_printf/
+PRINTF_DIR = printf/
 PRINTF_SRC = ft_printf.c \
 	utils.c \
 	state/state_default.c \
@@ -84,7 +84,7 @@ OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-IFLAGS = -I. -I$(LIBFT_DIR) -I$(PRINTF_DIR)
+IFLAGS = -I.
 
 all: $(NAME)
 
