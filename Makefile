@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/12/02 01:29:12 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/02 01:48:29 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,21 +60,39 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_ltoa_base.c \
 	ft_fill_str.c
 
-OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o))
+PRINTF_DIR = ft_printf/
+PRINTF_SRC = ft_printf.c \
+	utils.c \
+	state/state_default.c \
+	state/state_conversion_flags.c \
+	state/state_conversion_length.c \
+	state/state_conversion_precision.c \
+	state/state_conversion_print.c \
+	state/state_wrong_flag.c \
+	conversion/print_character.c \
+	conversion/print_string.c \
+	conversion/print_pointer.c \
+	conversion/print_int.c \
+	conversion/print_unsigned_int.c \
+	conversion/print_hex_lowercase.c \
+	conversion/print_hex_uppercase.c \
+	conversion/print_flag.c \
+
+OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
+	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o))
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -pedantic
-IFLAGS = -I$(LIBFT_DIR)
+CFLAGS = -Wall -Wextra -Werror
+IFLAGS = -I. -I$(LIBFT_DIR) -I$(PRINTF_DIR)
 
 all: $(NAME)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -I . -c $< -o $@
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
-	ar rc  $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rcs  $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ) $(OBJ_BONUS)

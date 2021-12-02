@@ -6,12 +6,13 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:48:31 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/02 01:22:04 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 01:49:46 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <stddef.h>
 
 typedef struct s_list
@@ -19,6 +20,12 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef enum s_bool
+{
+	FALSE,
+	TRUE
+}	t_bool;
 
 /* C type */
 int		ft_isalpha(int c);
