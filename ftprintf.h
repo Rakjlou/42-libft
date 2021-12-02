@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ftprintf.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:36:16 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/02 01:50:00 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:34:33 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -61,7 +60,7 @@ typedef struct s_printf
 
 }	t_printf;
 
-int			ft_printf(const char *format, ...);
+int			ftprintf(const char *format, ...);
 /* STATES */
 const char	*state_default(const char *format, t_printf *state);
 const char	*state_conversion(const char *format, t_printf *state);

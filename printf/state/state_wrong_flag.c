@@ -6,11 +6,11 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:29:17 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/29 17:36:37 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:34:06 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ftprintf.h"
 #include <unistd.h>
 
 const char	*state_wrong_flag(const char *format, t_printf *state)

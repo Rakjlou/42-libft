@@ -6,11 +6,11 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 22:11:04 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/28 00:40:28 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:34:10 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 const char	*state_conversion_precision(const char *format, t_printf *state)
 {

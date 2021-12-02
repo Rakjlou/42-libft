@@ -6,12 +6,12 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 23:08:59 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/27 22:09:37 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:34:08 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
+#include "ftprintf.h"
 #include <unistd.h>
 
 static int	get_state(const char token)

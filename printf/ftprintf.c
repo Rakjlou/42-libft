@@ -6,12 +6,11 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:30:31 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/11/29 21:03:54 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:34:15 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
-#include "ft_printf.h"
+#include "ftprintf.h"
 #include <stdarg.h>
 #include <stddef.h>
 
@@ -27,7 +26,7 @@ static void	init_state(t_printf *state)
 	state->callback[STATE_WRONG_FLAG] = state_wrong_flag;
 }
 
-int	ft_printf(const char *format, ...)
+int	ftprintf(const char *format, ...)
 {
 	t_printf		state;
 	unsigned int	current_state;

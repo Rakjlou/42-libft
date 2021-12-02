@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/12/02 02:20:53 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/02 02:34:18 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_fill_str.c
 
 PRINTF_DIR = printf/
-PRINTF_SRC = ft_printf.c \
+PRINTF_SRC = ftprintf.c \
 	utils.c \
 	state/state_default.c \
 	state/state_conversion_flags.c \
@@ -77,6 +77,9 @@ PRINTF_SRC = ft_printf.c \
 	conversion/print_hex_lowercase.c \
 	conversion/print_hex_uppercase.c \
 	conversion/print_flag.c \
+
+LST_DIR = lst/
+LST_SRC = ft_lstnew.c
 
 OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o))
