@@ -6,13 +6,14 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/11/25 02:31:52 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/02 01:29:12 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_isalpha.c \
+LIBFT_DIR = libft/
+LIBFT_SRC = ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -45,11 +46,8 @@ SRC = ft_isalpha.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
-
-OBJ = $(SRC:.c=.o)
-
-SRC_BONUS = ft_lstnew.c \
+	ft_putnbr_fd.c \
+	ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -57,13 +55,17 @@ SRC_BONUS = ft_lstnew.c \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c
+	ft_lstmap.c \
+	ft_utoa_base.c \
+	ft_ltoa_base.c \
+	ft_fill_str.c
 
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
+OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o))
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pedantic
+IFLAGS = -I$(LIBFT_DIR)
 
 all: $(NAME)
 
@@ -72,10 +74,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc  $(NAME) $(OBJ)
-	ranlib $(NAME)
-
-bonus: $(OBJ) $(OBJ_BONUS)
-	ar rc  $(NAME) $(OBJ) $(OBJ_BONUS)
 	ranlib $(NAME)
 
 clean:
