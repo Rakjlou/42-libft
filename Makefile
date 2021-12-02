@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/12/02 02:34:18 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/02 07:59:07 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,10 +79,37 @@ PRINTF_SRC = ftprintf.c \
 	conversion/print_flag.c \
 
 LST_DIR = lst/
-LST_SRC = ft_lstnew.c
+LST_SRC = iter_init.c \
+	iter_new.c \
+	iter_next.c \
+	lst_bubble_sort.c \
+	lst_change_first_by_node.c \
+	lst_change_first_by_pos.c \
+	lst_data_at.c \
+	lst_data_back.c \
+	lst_data_front.c \
+	lst_destroy.c \
+	lst_insert.c \
+	lst_is_empty.c \
+	lst_new.c \
+	lst_node_at.c \
+	lst_node_back.c \
+	lst_node_front.c \
+	lst_pop_back.c \
+	lst_pop_front.c \
+	lst_print.c \
+	lst_push_back.c \
+	lst_push_front.c \
+	lst_remove.c \
+	lst_swap.c \
+	node_destroy.c \
+	node_insert_between.c \
+	node_new.c \
+	node_swap.c
 
 OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
-	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o))
+	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o)) \
+	$(addprefix $(LST_DIR), $(LST_SRC:.c=.o)) \
 
 CC = gcc
 

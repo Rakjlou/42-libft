@@ -6,11 +6,12 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:36:16 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/02 02:34:33 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/02 02:43:50 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+
+#ifndef FTPRINTF_H
+# define FTPRINTF_H
 
 # include <stdlib.h>
 # include <stdarg.h>
