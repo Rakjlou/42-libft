@@ -6,7 +6,7 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:36:16 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/02 02:43:50 by nsierra-         ###   ########.fr       */
+/*   Updated: 2021/12/04 03:15:14 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ typedef struct s_printf
 
 }	t_printf;
 
-int			ftprintf(const char *format, ...);
+int			ftprintf(const char *format, ...)
+			__attribute__((__format__ (__printf__, 1, 2)));
 /* STATES */
 const char	*state_default(const char *format, t_printf *state);
 const char	*state_conversion(const char *format, t_printf *state);
