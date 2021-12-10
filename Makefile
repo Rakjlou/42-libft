@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2021/12/02 07:59:07 by nsierra-         ###   ########.fr        #
+#    Updated: 2021/12/10 02:47:54 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,9 +107,16 @@ LST_SRC = iter_init.c \
 	node_new.c \
 	node_swap.c
 
+GNL_DIR = gnl/
+GNL_SRC = gnl_utils.c \
+	gnl.c \
+	gnl_fd.c \
+	gnl_fd_utils.c
+
 OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o)) \
 	$(addprefix $(LST_DIR), $(LST_SRC:.c=.o)) \
+	$(addprefix $(GNL_DIR), $(GNL_SRC:.c=.o))
 
 CC = gcc
 
