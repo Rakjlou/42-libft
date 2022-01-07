@@ -119,7 +119,7 @@ OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pedantic -ansi
 IFLAGS = -I.
 
 all: $(NAME)
