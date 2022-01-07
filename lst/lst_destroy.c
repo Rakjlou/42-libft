@@ -21,7 +21,7 @@ void	lst_destroy(t_lst **lst, void (*del)(void *))
 	list = *lst;
 	while (42)
 	{
-		data = lst_pop_back(list, del);
+		data = lst_pop_back(list, NULL);
 		if (data == NULL)
 			break ;
 		if (del)
