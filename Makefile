@@ -108,10 +108,9 @@ LST_SRC = iter_init.c \
 	node_swap.c
 
 GNL_DIR = gnl/
-GNL_SRC = gnl_utils.c \
-	gnl.c \
-	gnl_fd.c \
-	gnl_fd_utils.c
+GNL_SRC = get_next_line.c \
+	get_next_line_fd.c \
+	get_next_line_fd_utils.c
 
 OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o)) \

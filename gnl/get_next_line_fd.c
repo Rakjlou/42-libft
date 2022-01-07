@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl_fd.c                                           :+:      :+:    :+:   */
+/*   get_next_line_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl_fd.h"
+#include "get_next_line_fd.h"
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -92,7 +92,7 @@ static char	*main_loop(t_gnl **fd_list, t_gnl *gnl)
 	return (NULL);
 }
 
-char	*gnl_fd(int fd)
+char	*get_next_line_fd(int fd)
 {
 	static t_gnl	*fd_list = NULL;
 	t_gnl			*gnl;

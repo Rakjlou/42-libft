@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl_fd_utils.c                                     :+:      :+:    :+:   */
+/*   get_next_line_fd_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl_fd.h"
+#include "get_next_line_fd.h"
 #include <stdlib.h>
 
 ssize_t	find_nl_position(char *buffer, ssize_t size)

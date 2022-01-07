@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl_fd.h                                           :+:      :+:    :+:   */
+/*   get_next_line_fd.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL_FD_H
-# define GNL_FD_H
+#ifndef GET_NEXT_LINE_FD_H
+# define GET_NEXT_LINE_FD_H
 
 # include <unistd.h>
 
@@ -37,7 +37,7 @@ typedef struct s_gnl
 	struct s_gnl	*next;
 }	t_gnl;
 
-char	*gnl_fd(int fd);
+char	*get_next_line_fd(int fd);
 ssize_t	find_nl_position(char *buffer, ssize_t size);
 char	*flush_buffer_list(t_gnl *gnl);
 char	*enqueue_buffer(t_gnl *gnl, char *buffer, ssize_t size, int nl_pos);
