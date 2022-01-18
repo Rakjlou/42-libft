@@ -6,7 +6,7 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:48:31 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/17 23:50:56 by nsierra-         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:32:02 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		ft_tolower(int c);
 
 /* Conversion */
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 char	*ft_itoa(int n);
 char	*ft_utoa_base(unsigned long num, char *base, unsigned int base_size);
 char	*ft_ltoa_base(long num, char *base, unsigned int base_size);
@@ -84,5 +85,9 @@ void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+
+/* Math */
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
 
 #endif
