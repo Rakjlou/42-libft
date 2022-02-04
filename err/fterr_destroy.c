@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   fterr_destroy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 14:26:09 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:36:09 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+#include "fterr.h"
+#include <stdlib.h>
+
+static void	free_error(void *error_raw)
 {
-	if (a <= b)
-		return (a);
-	return (b);
+	t_fterr	*error;
+
+	error = (t_fterr *)error_raw;
+	if (error->data_free != NULL)
+		error->data_free(error->data);
+	free(error);
 }
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	fterr_destroy(void)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	t_lst	*e_list;
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	e_list = fterr_get_list();
+	if (e_list == NULL)
+		return ;
+	lst_destroy_nodes(e_list, free_error);
 }

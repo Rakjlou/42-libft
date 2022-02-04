@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_cvalid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 00:23:24 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 00:58:33 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
-}
+#include "libft.h"
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+t_bool	ft_cvalid(char ref, char *authorized)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	int	i;
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	i = 0;
+	while (authorized[i])
+	{
+		if (ref == authorized[i])
+			return (TRUE);
+		++i;
+	}
+	return (FALSE);
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   fterr_get_list.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 13:17:56 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:30:27 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
-}
+#include "fterr.h"
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+t_lst	*fterr_get_list(void)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	static t_lst	lst = {0, NULL};
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	return (&lst);
 }

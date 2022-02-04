@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   gnl_close.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 00:12:23 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 00:14:47 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
-}
+#include "get_next_line.h"
+#include <stdlib.h>
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	gnl_close(int fd)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	char	*line;
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	while (42)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		free(line);
+	}
+	close(fd);
 }

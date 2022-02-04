@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   fterr_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 13:59:20 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:47:15 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
-}
+#include "fterr.h"
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	fterr_print(void)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	t_fterr	*error;
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	error = fterr_current();
+	if (error == NULL)
+		return ;
+	error->print(error);
 }

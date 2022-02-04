@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   fterr_set.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 13:42:50 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:18:46 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+#include "fterr.h"
+
+void	fterr_set(t_fterr_code code, void *data, void (*data_free)(void *))
 {
-	if (a <= b)
-		return (a);
-	return (b);
+	t_fterr	*error;
+
+	error = fterr_get(code);
+	if (error == NULL)
+		return ;
+	if (error->data_free != NULL)
+		error->data_free(error->data);
+	error->data = data;
+	error->data_free = data_free;
+	fterr_set_current(error);
 }
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	fterr_set_error(t_fterr_code code)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
-
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	fterr_set(code, NULL, NULL);
 }

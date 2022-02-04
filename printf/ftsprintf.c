@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftprintf.c                                         :+:      :+:    :+:   */
+/*   ftsprintf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 00:30:31 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/01/25 13:28:37 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/02/01 19:13:29 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/02/01 20:00:02 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ftprintf.h"
-#include <stdarg.h>
-#include <stddef.h>
-#include <unistd.h>
 
-static void	init_state(t_printf *state)
+static void	init_state(t_printf *state, char *buffer, unsigned int size)
 {
-	state->fd = STDOUT_FILENO;
+	state->fd = -42;
+	state->wbuf = buffer;
+	state->wbuf_size = size;
+	state->wbuf_cursor = 0;
 	state->current = STATE_DEFAULT;
 	state->bytes_printed = 0;
 	state->callback[STATE_DEFAULT] = state_default;
@@ -29,14 +28,14 @@ static void	init_state(t_printf *state)
 	state->callback[STATE_WRONG_FLAG] = state_wrong_flag;
 }
 
-int	ftprintf(const char *format, ...)
+int	ftsprintf(char *buffer, size_t size, const char *format, ...)
 {
 	t_printf		state;
 	unsigned int	current_state;
 
 	if (format == NULL)
 		return (-1);
-	init_state(&state);
+	init_state(&state, buffer, size);
 	va_start(state.args, format);
 	while (state.current != STATE_END)
 	{

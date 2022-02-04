@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   fterr_default_print.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 13:23:46 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 14:47:39 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+#include "fterr.h"
+#include "libft.h"
+#include "ftprintf.h"
+#include <unistd.h>
+
+void	fterr_print_ecode(t_fterr *error)
 {
-	if (a <= b)
-		return (a);
-	return (b);
+	ftfprintf(STDERR_FILENO, "[E%d] ", error->code);
 }
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	fterr_default_print(t_fterr *error)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
-
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	fterr_print_ecode(error);
+	ftfprintf(STDERR_FILENO, "%s\n", error->message);
 }

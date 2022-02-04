@@ -6,7 +6,7 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 01:43:34 by nsierra-          #+#    #+#             */
-/*   Updated: 2021/12/10 05:02:31 by nsierra-         ###   ########.fr       */
+/*   Updated: 2022/01/25 00:14:29 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ typedef struct s_gnl_node
 }	t_gnl_node;
 
 char		*get_next_line(int fd);
+void		gnl_close(int fd);
 
 #endif

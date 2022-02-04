@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/25 17:22:34 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/25 19:19:12 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
+#include "ftconfig.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+static void	ftconfig_destroy_entry(void *data)
 {
-	if (a <= b)
-		return (a);
-	return (b);
+	char	**entry;
+	int		i;
+
+	i = 0;
+	if (data == NULL)
+		return ;
+	entry = (char **)data;
+	while (entry[i] != NULL)
+		free(entry[i++]);
+	free(entry);
 }
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+void	ftconfig_destroy(t_ftconfig *config)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
-
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	lst_destroy_nodes(&config->data, ftconfig_destroy_entry);
+	ft_bzero(config, sizeof(t_ftconfig));
 }

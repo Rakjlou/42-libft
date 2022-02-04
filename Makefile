@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2022/01/18 15:30:22 by nsierra-         ###   ########.fr        #
+#    Updated: 2022/02/01 19:54:57 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,10 +62,15 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_atol.c \
 	ft_min.c \
 	ft_max.c \
+	ft_ends_with.c \
+	ft_cvalid.c \
 
 PRINTF_DIR = printf/
 PRINTF_SRC = ftprintf.c \
+	ftfprintf.c \
+	ftsprintf.c \
 	utils.c \
+	write.c \
 	state/state_default.c \
 	state/state_conversion_flags.c \
 	state/state_conversion_length.c \
@@ -108,17 +113,39 @@ LST_SRC = iter_init.c \
 	node_destroy.c \
 	node_insert_between.c \
 	node_new.c \
-	node_swap.c
+	node_swap.c \
 
 GNL_DIR = gnl/
 GNL_SRC = get_next_line.c \
+	gnl_close.c \
 	get_next_line_fd.c \
-	get_next_line_fd_utils.c
+	get_next_line_fd_utils.c \
+
+READF_DIR = readf/
+READF_SRC = readf.c \
+
+CONFIG_DIR = config/
+CONFIG_SRC = init.c \
+	destroy.c \
+	get.c \
+
+ERR_DIR = err/
+ERR_SRC = fterr_current.c \
+	fterr_default_print.c \
+	fterr_get_list.c \
+	fterr_print.c \
+	fterr_register.c \
+	fterr_set.c \
+	fterr_get.c \
+	fterr_destroy.c \
 
 OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 	$(addprefix $(PRINTF_DIR), $(PRINTF_SRC:.c=.o)) \
 	$(addprefix $(LST_DIR), $(LST_SRC:.c=.o)) \
-	$(addprefix $(GNL_DIR), $(GNL_SRC:.c=.o))
+	$(addprefix $(GNL_DIR), $(GNL_SRC:.c=.o)) \
+	$(addprefix $(READF_DIR), $(READF_SRC:.c=.o)) \
+	$(addprefix $(CONFIG_DIR), $(CONFIG_SRC:.c=.o)) \
+	$(addprefix $(ERR_DIR), $(ERR_SRC:.c=.o)) \
 
 CC = gcc
 

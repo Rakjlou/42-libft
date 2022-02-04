@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_min.c                                           :+:      :+:    :+:   */
+/*   ft_ends_with.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:17:02 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:32 by nsierra-         ###   ########.fr       */
+/*   Created: 2022/01/24 23:39:19 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/01/24 23:43:27 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
-}
+#include "libft.h"
 
-unsigned int	ft_umin(unsigned int a, unsigned int b)
+t_bool	ft_ends_with(char *haystack, char *needle)
 {
-	if (a <= b)
-		return (a);
-	return (b);
-}
+	size_t	hlen;
+	size_t	nlen;
 
-unsigned int	ft_uimin(unsigned int a, unsigned int b)
-{
-	return ((unsigned int)ft_min((int)a, (int)b));
+	hlen = ft_strlen(haystack);
+	nlen = ft_strlen(needle);
+	if (nlen > hlen)
+		return (FALSE);
+	while (42)
+	{
+		--hlen;
+		--nlen;
+		if (haystack[hlen] != needle[nlen])
+			return (FALSE);
+		else if (nlen == 0)
+			break ;
+	}
+	return (TRUE);
 }
