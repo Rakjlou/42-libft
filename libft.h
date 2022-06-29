@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajung <ajung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 12:48:31 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/02/01 14:45:15 by nsierra-         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:00:50 by ajung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_isblank(int c);
+int				ft_isspace(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
@@ -60,6 +62,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+int				ft_tmpfile(char **filepath);
 
 /* Basic list */
 t_list			*ft_lstnew(void *content);
@@ -90,6 +93,12 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_fill_str(char *str, char to_fill, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *str, const char *sep);
+
+/* String arrays */
+void			ft_cmatrix_print(char **matrix);
+void			ft_cmatrix_free(char **matrix);
+size_t			ft_cmatrix_size(char **matrix);
+char			**ft_cmatrix_join(char **matrix1, char **matrix2);
 
 /* Raw memory */
 void			ft_bzero(void *s, size_t n);

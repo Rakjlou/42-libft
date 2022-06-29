@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_cmatrix_print.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:05:29 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/03/02 05:05:27 by nsierra-         ###   ########.fr       */
+/*   Created: 2021/11/30 15:48:53 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/03/03 19:15:50 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include "ftprintf.h"
 #include "libft.h"
 
-char	*ft_strtrim(char const *s, char const *set)
+void	ft_cmatrix_print(char **matrix)
 {
-	int			end;
-	size_t		start;
+	int	i;
 
-	start = 0;
-	end = ft_strlen(s) - 1;
-	while (ft_strchr(set, s[start]) != NULL)
-		start++;
-	while (end >= 0 && ft_strchr(set, s[end]))
-		end--;
-	return (ft_substr(s, start, (end - start) + 1));
+	if (matrix == NULL)
+		ftprintf("(null)\n");
+	else
+	{
+		i = 0;
+		ftprintf("[\n");
+		while (matrix[i])
+		{
+			ftprintf("\t%d => '%s'\n", i, matrix[i]);
+			++i;
+		}
+		ftprintf("]\n");
+		return ;
+	}
 }

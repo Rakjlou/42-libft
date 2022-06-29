@@ -6,7 +6,7 @@
 #    By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:56:55 by nsierra-          #+#    #+#              #
-#    Updated: 2022/02/01 19:54:57 by nsierra-         ###   ########.fr        #
+#    Updated: 2022/03/28 23:16:09 by nsierra-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_isalnum.c \
 	ft_isascii.c \
 	ft_isprint.c \
+	ft_isblank.c \
+	ft_isspace.c \
 	ft_strlen.c \
 	ft_memset.c \
 	ft_bzero.c \
@@ -64,6 +66,11 @@ LIBFT_SRC = ft_isalpha.c \
 	ft_max.c \
 	ft_ends_with.c \
 	ft_cvalid.c \
+	ft_cmatrix_free.c \
+	ft_cmatrix_print.c \
+	ft_cmatrix_size.c \
+	ft_cmatrix_join.c \
+	ft_tmpfile.c \
 
 PRINTF_DIR = printf/
 PRINTF_SRC = ftprintf.c \
@@ -110,6 +117,7 @@ LST_SRC = iter_init.c \
 	lst_push_front.c \
 	lst_remove.c \
 	lst_swap.c \
+	lst_as_cmatrix.c \
 	node_destroy.c \
 	node_insert_between.c \
 	node_new.c \
@@ -149,7 +157,7 @@ OBJ = $(addprefix $(LIBFT_DIR), $(LIBFT_SRC:.c=.o)) \
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -pedantic -ansi
+CFLAGS = -Wall -Wextra -Werror
 IFLAGS = -I.
 
 all: $(NAME)

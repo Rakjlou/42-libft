@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_cmatrix_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:05:29 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/03/02 05:05:27 by nsierra-         ###   ########.fr       */
+/*   Created: 2021/11/30 15:48:53 by nsierra-          #+#    #+#             */
+/*   Updated: 2022/03/02 21:48:57 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strtrim(char const *s, char const *set)
+void	ft_cmatrix_free(char **matrix)
 {
-	int			end;
-	size_t		start;
+	int	i;
 
-	start = 0;
-	end = ft_strlen(s) - 1;
-	while (ft_strchr(set, s[start]) != NULL)
-		start++;
-	while (end >= 0 && ft_strchr(set, s[end]))
-		end--;
-	return (ft_substr(s, start, (end - start) + 1));
+	if (matrix == NULL)
+		return ;
+	i = 0;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		++i;
+	}
+	free(matrix);
 }

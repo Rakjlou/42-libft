@@ -6,7 +6,7 @@
 /*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 02:37:36 by nsierra-          #+#    #+#             */
-/*   Updated: 2022/01/25 14:33:04 by nsierra-         ###   ########.fr       */
+/*   Updated: 2022/03/28 21:59:13 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	lst_bubble_sort(t_lst *lst, int (*cmp)(void *, void *));
 void	lst_print(t_lst *lst, void (*print_f)(void *), int m);
 void	lst_destroy(t_lst **lst, void (*f)(void *));
 void	lst_destroy_nodes(t_lst *lst, void (*del)(void *));
+char	**lst_as_cmatrix(t_lst *lst, int duplicate);
 
 /* Nodes */
 t_node	*node_new(void *data);
